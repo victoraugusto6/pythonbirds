@@ -18,9 +18,13 @@ class Pessoa:
         return f'Ele tem {cls.olhos} olhos'
 
 
+class Homem(Pessoa):
+    pass
+
+
 if __name__ == '__main__':
-    victor = Pessoa(nome='Victor', idade='25')
-    joao = Pessoa(victor, nome='João', idade=50)
+    victor = Homem(nome='Victor', idade='25')
+    joao = Homem(victor, nome='João', idade=50)
 
     for filho in joao.filhos:
         print(filho.nome)
