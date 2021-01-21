@@ -22,8 +22,13 @@ class Homem(Pessoa):
     pass
 
 
+# Sobrescrita de atributo
+class Mutante(Pessoa):
+    olhos = 0
+
+
 if __name__ == '__main__':
-    victor = Homem(nome='Victor', idade='25')
+    victor = Mutante(nome='Victor', idade='25')
     joao = Homem(victor, nome='João', idade=50)
 
     for filho in joao.filhos:
@@ -31,6 +36,6 @@ if __name__ == '__main__':
         joao.sobrenome = 'Fernandes'
         del joao.filhos
         print(joao.__dict__)
-        print(joao.olhos)
         print(Pessoa.metodo_estatico(), victor.metodo_estatico())
         print(Pessoa.nome_e_atributos_de_classe(), victor.nome_e_atributos_de_classe())
+        print(victor.olhos)
